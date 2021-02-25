@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+
+    </head>
+    <body>
+        <output id='resu' class='blue-text fonte' ></output>
+        <canvas id='canvas' class='center'></canvas>
+        <div class="" id='num'></div>
+        <div class="" id='base'></div>
+        <div class="" id='win' hidden>2</div>
+    </body>
+</html>
+
+
+<script type="text/javascript" src="../../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src='../../js/conversao_de_bases/cb_dec_to_n.js'></script>
+<script> 
+
+    $(document).ready(function(){
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        var num = url.searchParams.get("numero");
+        var base = url.searchParams.get("base");
+        document.getElementById('num').value = num;
+        document.getElementById('base').value = base;
+
+        dec_to_n();
+    });
+   
+
+</script>

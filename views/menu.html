@@ -1,0 +1,60 @@
+<nav class='top-nav primeiraCor' >
+    <div class='container'> 
+      <div class='nav-wrapper titulo'>
+        <a href='#' class='sidenav-trigger' data-target='mobile-demo' style="margin: 0;"><i class='material-icons' >menu</i></a>
+        <a href="" class="titulo-menu"></a>
+        <ul class="right hide-on-small-only">
+          <li><a href='#'>Contato</a></li>
+          <li><a href='#'>Sobre</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class=''>
+    <ul class="collapsible collapsible-accordion sidenav sidenav-fixed" id='mobile-demo' >
+      <div class='center'>
+          <img class="responsive-img" src="https://logodownload.org/wp-content/uploads/2018/04/ufrn-logo.png" style="margin-top: 20px;width: 80%">
+      </div>
+      <hr/>
+      <li>
+        <a class='collapsible-header waves-effect' id='conversaoBases'>CONVERSÃO DE BASES</a>
+        <div class='collapsible-body no-padding'>
+          <ul >
+            <li id='menu_cb_dec_to_n'><a href="../conversao_de_bases/cb_dec_to_n.html">Decimal para N</a></li>
+            <li id='menu_cb_n_to_dec'><a href="../conversao_de_bases/cb_n_to_dec.html">N para decimal</a></li>
+            <li id='menu_agrupamentos'><a href="../conversao_de_bases/agrupamentos.html">Agrupamento de bits</a></li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <a class='collapsible-header waves-effect' id='numerosInteiros'>NÚMEROS INTEIROS</a>
+        <div class='collapsible-body no-padding'>
+          <ul >
+            <li id='menu_int_bin_to_dec'><a href="../representacao_de_inteiros/bin_to_dec.html">Binário para decimal</a></li>
+            <li id='menu_int_dec_to_bin'><a href="../representacao_de_inteiros/dec_to_bin.html">Decimal para binário</a></li>
+        </div>
+      </li>
+      <li >
+        <a id='menu_aritmetica' class='collapsible-header waves-effect' href="../aritimetica/aritimetica.html">ARITIMÉTICA</a>
+      </li>
+      <li>
+        <a class='collapsible-header waves-effect' id='pontoFlutuante'>PONTO FLUTUANTE</a>
+        <div class='collapsible-body no-padding'>
+          <ul >
+            <li id='menu_flut_bin_to_dec'><a href="../ponto_flutuante/pf_bin_to_dec.html">PF para decimal</a></li>
+            <li id='menu_flut_dec_to_bin'><a href="../ponto_flutuante/pf_dec_to_bin.html">Decimal para PF</a></li>
+        </div>
+      </li>
+    </ul>
+  </div>    
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+    });
+
+ 
+  </script>

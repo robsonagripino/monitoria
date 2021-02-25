@@ -1,0 +1,180 @@
+:root {
+  --color-sinal: rgb(103, 103, 250);
+  --color-exp: rgb(121, 255, 103);
+  --color-mant: rgb(255, 163, 163); 
+  --primary-color: #2196f3;
+  --secundary-color:  #fafafa;
+  --label-color: #3f51b5;
+}
+
+.pr{
+   margin-top: 15px;
+}
+.toast, .primeiraCor{
+	background: var(--primary-color) !important;
+}
+.segundaCor{
+	background: var(--secundary-color) !important;
+}
+
+.primeiraCorFont{
+  color: var(--primary-color) !important;
+}
+.segundaCorFont{
+  color:var(--secundary-color)!important;
+}
+
+label{
+  color: var(--label-color) !important;
+}
+
+.fonte1{
+  font-family: inherit !important;
+}
+
+.fonte{
+  font-family: inherit !important;
+  font-weight: bold;
+  font-size: 20px !important;
+}
+.titulo{
+	font-size: 30px;
+}
+
+.container{
+  margin: 0 auto;
+  width: 90% !important;
+}
+
+.sidenav{
+  width: 240px !important;
+}
+
+header, main, footer {
+  padding-left: 240px;
+  font-family: inherit !important;
+}
+
+@media only screen and (max-width : 992px) {
+  .titulo{
+  	text-align: center;
+  }
+}
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
+}
+
+table tr td{
+  padding: 0.5rem 2rem !important;
+}
+
+.card{
+  margin: 0 0 1rem 0;
+}
+.result-container{
+  padding: 0 !important;
+}
+
+@media (max-width: 600px){
+  .button-container{
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+   }
+
+   input {
+    font-size: 20px;
+    padding:6px;
+  }
+  
+  input[type=number]::-webkit-inner-spin-button { 
+  all: unset; 
+  min-width: 21px;
+  min-height: 45px;
+  margin: 17px;
+  padding: 0px;
+  background-image: 
+  linear-gradient(to top, transparent 0px, transparent 16px, #fff 16px, #fff 26px, transparent 26px, transparent 35px, #000 35px,#000 36px,transparent 36px, transparent 40px),
+  linear-gradient(to right, transparent 0px, transparent 10px, #000 10px, #000 11px, transparent 11px, transparent 21px);
+  transform: rotate(90deg) scale(0.8, 0.9);
+  
+  }
+}
+
+@media (min-width: 600px){
+  .card{
+    margin: 0 0 1rem 0;
+  }
+
+}
+
+.bin-container{
+  display: flex;
+  justify-content: center;
+
+}
+
+
+.bin-container > div{
+  padding: 0 3px;
+}
+
+.bin-container div:last-child{
+  border-radius: 0 0.2rem 0.2rem 0;
+}
+
+.bin-container .sinal{
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-radius: 0.2rem 0rem 0rem 0.2rem;
+  background: var(--color-sinal);
+}
+.bin-container .exp{
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  background: var(--color-exp);
+}
+.bin-container .mant{
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  border-right: 1px solid;
+  background: var(--color-mant);
+}
+.dot-sinal, .dot-exp, .dot-mant{
+  height: 10px;
+  width: 10px;
+  background:var(--color-sinal);
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+.dot-sinal{
+  background: var(--color-sinal);
+}
+.dot-exp{
+  background: var(--color-exp);
+}
+.dot-mant{
+  background: var(--color-mant);
+}
+
+.my-card{
+  border: 1px solid rgba(var(--b6a,219,219,219),1);
+}
+
+.button-container{
+  padding: 0 0 1rem 0;
+}
+.button-container :first-child {
+  margin-right: 1rem;
+}
+
+.texto-sinal {
+  display: flex;
+  flex-direction: column;
+}
+

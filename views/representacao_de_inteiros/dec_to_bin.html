@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" /> 
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../../css/materialize.min.css"  media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <link type="text/css" rel="stylesheet" href="../../css/estilo.css"  media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body >
+    <title>Números inteiros</title>
+    <header>
+      <div class="menu"></div>
+    </header>
+
+      <!-- Modal Structure -->
+      <div id="modalCalcExc" class="modal fonte1">
+        <div class="modal-content" >
+          <h4 class='center primeiraCorFont'>Cálculo do excesso</h4>
+          <p style='font-size: 18px'>2<sup>n-1</sup> - 1, onde n é a quantidade de bits</p>
+            <div id='modal_exc' style='font-size: 18px'>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-grey btn-flat grey lighten-3">OK</a>
+        </div>
+      </div>
+      <!-- Modal Structure -->
+      <div id="modalsm" class="modal fonte1">
+        <div class="modal-content">
+          <h4 class='center primeiraCorFont'>Sinal e magnitude</h4>
+          <p>sinal e magnitude é....</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat grey lighten-3">OK</a>
+        </div>
+      </div>
+      <!-- Modal Structure -->
+      <div id="modalc1" class="modal fonte1">
+        <div class="modal-content">
+          <h4 class='center primeiraCorFont'>Complemento de 1</h4>
+          <p>Complemento de 1 é....</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat grey lighten-3">OK</a>
+        </div>
+      </div>
+      <!-- Modal Structure -->
+      <div id="modalc2" class="modal fonte1">
+        <div class="modal-content">
+          <h4 class='center primeiraCorFont'>Complemento de 2</h4>
+          <p>Complemento de 2 é....</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat grey lighten-3">OK</a>
+        </div>
+      </div>
+      <!-- Modal Structure -->
+      <div id="modalexc" class="modal fonte1">
+        <div class="modal-content">
+          <h4 class='center primeiraCorFont'>Notação em excesso</h4>
+          <p>Notação em excesso é....</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat grey lighten-3">OK</a>
+        </div>
+      </div>
+
+
+    <br/>
+    <main style="height: 100vh;" >
+      <div class='container'>
+        <h4 style="margin-top: 0">Decimal para binário</h4><hr style="size:100px" />
+        <div class='row pr' >
+          
+          <div class='col s12'>
+            <div class='row'>
+              <div class='col s12 card'>
+                <div class='center'>
+                  <!--input-->
+                  <div class="input-field">
+                    <input  id="num" type="text" class="validate" inputmode="tel" onkeyup="converter()">
+                    <label for="num">número</label>
+                  </div>
+                  <div>
+                    <label for='qntBits' class='left'>qnt. de bits</label><br/>
+                    <input type="number" id="qntBits" min="2" max="32" value='8' onchange="converter()" />
+                  </div>
+                    <!--resposta-->
+                  <div class="grey lighten-4 black-text center" style=" margin-bottom: 10px">
+                    <label for='result'>resultado</label><br/>
+                    <output id='result' class='blue-text fonte' >
+                      
+                    </output>
+                  </div>
+                </div>
+              </div>
+              <div class='col s12 result-container'>
+                <div class="center">
+                  <!--resolução-->
+                  <table class="centered striped fonte1" id = 'table' >
+                    <tbody id='table_result'>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>     
+          </div>
+                    <!--
+          <div class='col hide-on-small-only l1 hide-on-med-and-down grey segundaCor' style="height: 100vh;">
+            <h6 style=' font-weight: bold'>Material auxiliar</h6>
+            <div class='center'> 
+              <a href=''>link 1</a><br/>
+              <a href=''>link 2</a><br/>
+              <a href='' >link 3</a><br/>
+              <button id='botao'>button</button>
+            </div>
+            -->
+        </div>
+      </div>
+    </main>
+  
+    <script type="text/javascript" src="../../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../../js/materialize.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $.ajax({
+            url: '../menu.html',
+            method: "get",
+            success: function(data){
+              $('.menu').html(data);
+              addSelectedColor();
+            }
+          });
+      });
+
+      setTimeout(function(){ document.getElementById("numerosInteiros").click(); }, 500);
+
+      function addSelectedColor(){
+        $('#menu_int_dec_to_bin').addClass('active primeiraCor');
+        $(".titulo-menu").append("Números Inteiros");
+      }
+
+      $(document).ready(function(){
+        $('select').formSelect();
+       });
+      $(document).ready(function(){
+        $('.sidenav').sidenav();
+      });
+      $(document).ready(function(){
+          $('.collapsible').collapsible('open', 1);
+      });
+      $(document).ready(function(){
+        $('.modal').modal();
+      });
+
+      $('.dropdown-trigger').dropdown();
+    </script>
+    <script type="text/javascript" src='../../js/numeros_inteiros/dec_to_bin.js'></script>
+  </body>
+</html> 
+              
+   
+        <!--RESULTADO-->
+
+
+      
