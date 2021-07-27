@@ -1,7 +1,13 @@
 var prevNum = '';
 function validador(){
 	var num = document.getElementById('num').value;
-	var s1 = document.getElementById('base').value;;
+	var s1 = document.getElementById('base').value;
+	var qntBits =  parseInt(document.getElementById('qntBits').value);
+
+	if(s1 == "16"){
+		qntBits = parseInt(qntBits/4);
+	}
+
 	var apto = true;
 
 	num = num.toUpperCase();
@@ -11,7 +17,9 @@ function validador(){
 	var valorDigito;
 
 	var numero = '';
-	for(var i = 0; i < num.length; i++){
+
+	console.log(qntBits);
+	for(var i = 0; i < num.length && i < qntBits; i++){
 		var ascii = num.charCodeAt(i);
 		//digitos de 0 à 9
 		if(ascii >= 48 && ascii <= 57){
@@ -28,21 +36,17 @@ function validador(){
 			boolMsg = true;
 		}
 	}
-
-
 	num = parseInt(num, s1);
-	var prev = parseInt(prevNum, s1);
 
-	if(num > 2**32-1){
-		var msg = "<i class='material-icons' style='padding:0;'>warning</i>O número possui mais de 32 bits";
-		M.toast({html: msg, displayLength: 3000});
-		numero = prevNum;
-		
+	if(!testa_qnt_bit(num)){
+		apto = false;
 	}
+
 	if(boolMsg){
 		var msg = "<i class='material-icons' style='padding:0;'>warning</i>Caractere(s) inválido(s)";
 		M.toast({html: msg, displayLength: 3000});
 	}
+
 	document.getElementById('num').value = numero;
 	prevNum = numero;
 	return apto;
@@ -260,7 +264,8 @@ function bin_to_dec(){
 	var qntBitsExp = parseInt(document.getElementById("qntBitsExp").value);
 	var qntBitsMant = parseInt(document.getElementById("qntBitsMant").value);
 
-	validador();
+	if(!validador())
+		return 0;
 	
 	aux = '';
 	if(base == 16){
@@ -271,14 +276,13 @@ function bin_to_dec(){
 		num = aux;
 	}
 
+	
+
 	num = completa0sD(num, qntBitsExp+qntBitsMant+1);
 
 	num = parseInt(num ,parseInt(2));
-	
-	var bitsSuficiente = testa_qnt_bit(num);
-	if(!bitsSuficiente){
-		return 0;
-	}
+
+	//console.log(num);
 
 	var sinal = num >> (qntBitsMant + qntBitsExp);
 

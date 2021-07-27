@@ -92,6 +92,7 @@ function validador(){
 	if(boolMsg){
 		var msg = "<i class='material-icons' style='padding:0;'>warning</i>Caractere(s) inválido(s)";
 		M.toast({html: msg, displayLength: 3000});
+		apto = false;
 	}
 	document.getElementById('num').value = numero;
 	prevNum = numero;
