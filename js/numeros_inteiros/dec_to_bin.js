@@ -1,4 +1,5 @@
 var prevNum = '';
+
 function validador(){
 	var num = document.getElementById('num').value;
 	var qntDeBits = document.getElementById('qntBits').value;
@@ -144,7 +145,7 @@ function sm(){
 	
 	var sm = sinal[0] + dec + '<sub>10</sub> = ';
 	if(parseInt(dec) >= 2**(qntBits-1) || parseInt(dec) <= -(2**(qntBits-1))){
-		sm += "não representável";
+		sm += "não representável<sub>sm</sub>";
 	}else{
 		bin = dec.toString(2);
 		bin = completa0s(bin, qntBits-1);
@@ -198,7 +199,7 @@ function c1(){
 
 	c1 = sinalStr + Math.abs(dec) + '<sub>10</sub> = ';
 	if(parseInt(dec) >= 2**(qntBits-1) || parseInt(dec) <= -(2**(qntBits-1))){
-		c1 += "não representável";
+		c1 += "não representável<sub>c1</sub>";
 	}else{
 		if(dec < 0 || sinalNum == -1){
 			dec *= -1;
@@ -246,7 +247,7 @@ function c2(){
 	if(dec[0] == '-' && parseInt(dec) == 0){
 		c2 = dec.substr(0, 2) + " = Não representável<sub>c2</sub>";
 	}else if(parseInt(dec) >= (2**(qntBits-1))){
-		c2 = "+"+dec + " = não representável";
+		c2 = "+"+dec + " = não representável<sub>c2</sub>";
 	}else{
 		dec = parseInt(dec);
 
@@ -296,7 +297,7 @@ function exc(){
 	if(dec[0] == '-' && parseInt(dec) == 0){
 		excesso = dec.substr(0, 2) + " = Não representável<sub>exc</sub>";
 	}else if(parseInt(dec) == -(2**(qntB-1))){
-		excesso = dec + " = Não representável<sub>exc</sub>";
+		excesso = dec + " = não representável<sub>exc</sub>";
 	}
 	else{
 		tam = document.getElementById('qntBits').value;

@@ -11,11 +11,11 @@ function selecionado(select){
 
 	if(select == 1){
 		if(valor1 == valor2){
-			selectElement2.value = (parseInt(valor2))%5 + 1;
+			selectElement2.value = (parseInt(valor2))%4 + 1;
 		}
 	}else{
 		if(valor1 == valor2){
-			selectElement1.value = (parseInt(valor1))%5 + 1;
+			selectElement1.value = (parseInt(valor1))%4 + 1;
 		}
 	}
 
@@ -25,6 +25,8 @@ function selecionado(select){
 	converter();
 	
 }
+
+
 var prevNum = '';
 function validador(){
 	var num = document.getElementById('numero').value;

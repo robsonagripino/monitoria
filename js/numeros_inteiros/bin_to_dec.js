@@ -169,8 +169,11 @@ function c1(){
 	dec = parseInt(bin, 2);
 
 	if(sinal == '1'){
+		c1 += '- c1(' + bin + ') = '; 
+
 		nbin = dec^mask;
 		nbin = '-' + completa0s(nbin.toString(2), tam); 
+
 		c1 += nbin + '<sub>2</sub> = ';
 		
 		dec = (dec^mask);
@@ -211,6 +214,8 @@ function c2(){
 	dec = parseInt(bin, 2);
 
 	if(sinal == '1'){
+		c2 += '- c2(' + bin + ') = '; 
+
 		nbin = (dec^mask) + 1;
 		nbin = '-' + completa0s(nbin.toString(2), tam); 
 		c2 += nbin + '<sub>2</sub> = ';
